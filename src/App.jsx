@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "./utils/const";
 import { useState } from "react";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   // POST Request
   const postData = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5000/upload", data);
+      const response = await axios.post(`${BASE_URL}upload`, data);
       setExtractedDetails(response.data);
     } catch (error) {
       console.log("eror", error.message);
